@@ -20,8 +20,8 @@
           </div>
           
           <h1 class="main-title">
-            上传任意报告<br>
-            <span class="gradient-text">即刻推演未来</span>
+              Stress-test earnings language<br>
+            <span class="gradient-text">before the market does</span>
           </h1>
           
           <div class="hero-desc">
@@ -124,40 +124,29 @@
             <!-- 上传区域 -->
             <div class="console-section">
               <div class="console-header">
-                <span class="console-label">01 / 现实种子</span>
-                <span class="console-meta">支持格式: PDF, MD, TXT</span>
+                <span class="console-label">01 / Announcement Draft</span>
+                <span class="console-meta">Paste text directly</span>
               </div>
               
-              <div 
-                class="upload-zone"
-                :class="{ 'drag-over': isDragOver, 'has-files': files.length > 0 }"
-                @dragover.prevent="handleDragOver"
-                @dragleave.prevent="handleDragLeave"
-                @drop.prevent="handleDrop"
-                @click="triggerFileInput"
-              >
-                <input
-                  ref="fileInput"
-                  type="file"
-                  multiple
-                  accept=".pdf,.md,.txt"
-                  @change="handleFileSelect"
-                  style="display: none"
-                  :disabled="loading"
-                />
-                
-                <div v-if="files.length === 0" class="upload-placeholder">
-                  <div class="upload-icon">↑</div>
-                  <div class="upload-title">拖拽文件上传</div>
-                  <div class="upload-hint">或点击浏览文件系统</div>
+              <div class="input-zone">
+                <div class="input-group">
+                  <label class="input-label">Paste Earnings Announcement</label>
+                  <textarea
+                    v-model="announcementText"
+                    placeholder="Paste your earnings announcement here..."
+                    rows="12"
+                    class="announcement-textarea"
+                  ></textarea>
                 </div>
-                
-                <div v-else class="file-list">
-                  <div v-for="(file, index) in files" :key="index" class="file-item">
-                    <span class="file-icon">📄</span>
-                    <span class="file-name">{{ file.name }}</span>
-                    <button @click.stop="removeFile(index)" class="remove-btn">×</button>
-                  </div>
+
+                <div class="input-group">
+                  <label class="input-label">Context (optional)</label>
+                  <input
+                    v-model="context"
+                    type="text"
+                    placeholder="e.g. Q3 earnings, missed revenue but beat margins"
+                    class="context-input"
+                  />
                 </div>
               </div>
             </div>
@@ -170,7 +159,7 @@
             <!-- 输入区域 -->
             <div class="console-section">
               <div class="console-header">
-                <span class="console-label">>_ 02 / 模拟提示词</span>
+                <span class="console-label">02 / Simulation Goal</span>
               </div>
               <div class="input-wrapper">
                 <textarea
@@ -218,67 +207,18 @@ const formData = ref({
   simulationRequirement: ''
 })
 
-// 文件列表
-const files = ref([])
-
 // 状态
 const loading = ref(false)
 const error = ref('')
-const isDragOver = ref(false)
 
-// 文件输入引用
-const fileInput = ref(null)
+
+const announcementText = ref('')
+const context = ref('')
 
 // 计算属性:是否可以提交
 const canSubmit = computed(() => {
-  return formData.value.simulationRequirement.trim() !== '' && files.value.length > 0
+  return announcementText.value.trim() !== '' && formData.value.simulationRequirement.trim() !== ''
 })
-
-// 触发文件选择
-const triggerFileInput = () => {
-  if (!loading.value) {
-    fileInput.value?.click()
-  }
-}
-
-// 处理文件选择
-const handleFileSelect = (event) => {
-  const selectedFiles = Array.from(event.target.files)
-  addFiles(selectedFiles)
-}
-
-// 处理拖拽相关
-const handleDragOver = (e) => {
-  if (!loading.value) {
-    isDragOver.value = true
-  }
-}
-
-const handleDragLeave = (e) => {
-  isDragOver.value = false
-}
-
-const handleDrop = (e) => {
-  isDragOver.value = false
-  if (loading.value) return
-  
-  const droppedFiles = Array.from(e.dataTransfer.files)
-  addFiles(droppedFiles)
-}
-
-// 添加文件
-const addFiles = (newFiles) => {
-  const validFiles = newFiles.filter(file => {
-    const ext = file.name.split('.').pop().toLowerCase()
-    return ['pdf', 'md', 'txt'].includes(ext)
-  })
-  files.value.push(...validFiles)
-}
-
-// 移除文件
-const removeFile = (index) => {
-  files.value.splice(index, 1)
-}
 
 // 滚动到底部
 const scrollToBottom = () => {
@@ -294,7 +234,11 @@ const startSimulation = () => {
   
   // 存储待上传的数据
   import('../store/pendingUpload.js').then(({ setPendingUpload }) => {
-    setPendingUpload(files.value, formData.value.simulationRequirement)
+    setPendingUpload({
+      announcementText: announcementText.value,
+      context: context.value,
+      simulationRequirement: formData.value.simulationRequirement
+    })
     
     // 立即跳转到Process页面（使用特殊标识表示新建项目）
     router.push({
@@ -887,4 +831,76 @@ const startSimulation = () => {
     margin-bottom: 20px;
   }
 }
+
+.input-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  letter-spacing: 0.01em;
+}
+
+.announcement-textarea {
+  width: 100%;
+  min-height: 260px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.announcement-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.announcement-textarea:focus {
+  border-color: #f97316;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.context-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.context-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.context-input:focus {
+  border-color: #f97316;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
 </style>
