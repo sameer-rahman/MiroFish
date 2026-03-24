@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Process from '../views/MainView.vue'
+import IRLoadingView from '../views/IRLoadingView.vue'
+import IRWorkbenchView from '../views/IRWorkbenchView.vue'
 import SimulationView from '../views/SimulationView.vue'
 import SimulationRunView from '../views/SimulationRunView.vue'
 import ReportView from '../views/ReportView.vue'
@@ -17,6 +19,16 @@ const routes = [
     name: 'Process',
     component: Process,
     props: true
+  },
+  {
+    path: '/ir-loading',
+    name: 'IRLoading',
+    component: IRLoadingView
+  },
+  {
+    path: '/ir-workbench',
+    name: 'IRWorkbench',
+    component: IRWorkbenchView
   },
   {
     path: '/simulation/:simulationId',
