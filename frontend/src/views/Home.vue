@@ -5,7 +5,7 @@
       <div class="nav-brand">MIROFISH</div>
       <div class="nav-links">
         <a href="https://github.com/666ghj/MiroFish" target="_blank" class="github-link">
-          访问我们的Github主页 <span class="arrow">↗</span>
+          Visit our GitHub page <span class="arrow">↗</span>
         </a>
       </div>
     </nav>
@@ -15,8 +15,8 @@
       <section class="hero-section">
         <div class="hero-left">
           <div class="tag-row">
-            <span class="orange-tag">简洁通用的群体智能引擎</span>
-            <span class="version-text">/ v0.1-预览版</span>
+            <span class="orange-tag">A Simple, General-Purpose Swarm Intelligence Engine</span>
+            <span class="version-text">/ v0.1 Preview</span>
           </div>
           
           <h1 class="main-title">
@@ -26,10 +26,10 @@
           
           <div class="hero-desc">
             <p>
-              即使只有一段文字，<span class="highlight-bold">MiroFish</span> 也能基于其中的现实种子，全自动生成与之对应的至多<span class="highlight-orange">百万级Agent</span>构成的平行世界。通过上帝视角注入变量，在复杂的群体交互中寻找动态环境下的<span class="highlight-code">“局部最优解”</span>
+              Even from a single passage of text, <span class="highlight-bold">MiroFish</span> can extract real-world seeds and automatically generate a parallel world populated by up to <span class="highlight-orange">millions of agents</span>. By injecting variables from a top-down perspective, it searches for the <span class="highlight-code">"local optimum"</span> within complex group interactions and dynamic environments.
             </p>
             <p class="slogan-text">
-              让未来在 Agent 群中预演，让决策在百战后胜出<span class="blinking-cursor">_</span>
+              Rehearse the future through agent swarms, and let decisions win after a hundred simulations<span class="blinking-cursor">_</span>
             </p>
           </div>
            
@@ -48,99 +48,44 @@
         </div>
       </section>
 
-      <!-- 下半部分：双栏布局 -->
+      <!-- 下半部分：控制台布局 -->
       <section class="dashboard-section">
-        <!-- 左栏：状态与步骤 -->
-        <div class="left-panel">
+        <div class="dashboard-intro">
           <div class="panel-header">
-            <span class="status-dot">■</span> 系统状态
-          </div>
-          
-          <h2 class="section-title">准备就绪</h2>
-          <p class="section-desc">
-            预测引擎待命中，可上传多份非结构化数据以初始化模拟序列
-          </p>
-          
-          <!-- 数据指标卡片 -->
-          <div class="metrics-row">
-            <div class="metric-card">
-              <div class="metric-value">低成本</div>
-              <div class="metric-label">常规模拟平均5$/次</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">高可用</div>
-              <div class="metric-label">最多百万级Agent模拟</div>
-            </div>
+            <span class="status-dot">■</span> System Status
           </div>
 
-          <!-- 项目模拟步骤介绍 (新增区域) -->
-          <div class="steps-container">
-            <div class="steps-header">
-               <span class="diamond-icon">◇</span> 工作流序列
-            </div>
-            <div class="workflow-list">
-              <div class="workflow-item">
-                <span class="step-num">01</span>
-                <div class="step-info">
-                  <div class="step-title">图谱构建</div>
-                  <div class="step-desc">现实种子提取 & 个体与群体记忆注入 & GraphRAG构建</div>
-                </div>
-              </div>
-              <div class="workflow-item">
-                <span class="step-num">02</span>
-                <div class="step-info">
-                  <div class="step-title">环境搭建</div>
-                  <div class="step-desc">实体关系抽取 & 人设生成 & 环境配置Agent注入仿真参数</div>
-                </div>
-              </div>
-              <div class="workflow-item">
-                <span class="step-num">03</span>
-                <div class="step-info">
-                  <div class="step-title">开始模拟</div>
-                  <div class="step-desc">双平台并行模拟 & 自动解析预测需求 & 动态更新时序记忆</div>
-                </div>
-              </div>
-              <div class="workflow-item">
-                <span class="step-num">04</span>
-                <div class="step-info">
-                  <div class="step-title">报告生成</div>
-                  <div class="step-desc">ReportAgent拥有丰富的工具集与模拟后环境进行深度交互</div>
-                </div>
-              </div>
-              <div class="workflow-item">
-                <span class="step-num">05</span>
-                <div class="step-info">
-                  <div class="step-title">深度互动</div>
-                  <div class="step-desc">与模拟世界中的任意一位进行对话 & 与ReportAgent进行对话</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2 class="section-title">Ready</h2>
+          <p class="section-desc">
+            The forecasting engine is standing by. Upload unstructured inputs to initialize a new simulation sequence.
+          </p>
+          <p class="dashboard-note">Paste the announcement draft and simulation goal, then launch the run immediately.</p>
         </div>
 
-        <!-- 右栏：交互控制台 -->
-        <div class="right-panel">
-          <div class="console-box">
-            <!-- 上传区域 -->
-            <div class="console-section">
-              <div class="console-header">
-                <span class="console-label">01 / Announcement Draft</span>
-                <span class="console-meta">Paste text directly</span>
-              </div>
-              
-              <div class="input-zone">
-                <div class="input-group">
-                  <label class="input-label">Paste Earnings Announcement</label>
+        <div class="console-box">
+          <!-- 上传区域 -->
+          <div class="console-section">
+            <div class="console-header">
+              <span class="console-label">01 / Announcement Draft</span>
+              <span class="console-meta">Paste text directly</span>
+            </div>
+            
+            <div class="input-zone">
+              <div class="input-group">
+                <label class="input-label">Paste Earnings Announcement</label>
+                <div class="input-wrapper">
                   <textarea
                     v-model="announcementText"
                     placeholder="Paste your earnings announcement here..."
                     rows="12"
-                    class="announcement-textarea"
+                    class="code-input announcement-input"
                   ></textarea>
                 </div>
+              </div>
 
-                <div class="input-group">
-                  <label class="input-label">Context (optional)</label>
+              <div class="input-group">
+                <label class="input-label">Context (optional)</label>
+                <div class="input-wrapper">
                   <input
                     v-model="context"
                     type="text"
@@ -150,41 +95,41 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- 分割线 -->
-            <div class="console-divider">
-              <span>输入参数</span>
-            </div>
+          <!-- 分割线 -->
+          <div class="console-divider">
+            <span>INPUTS</span>
+          </div>
 
-            <!-- 输入区域 -->
-            <div class="console-section">
-              <div class="console-header">
-                <span class="console-label">02 / Simulation Goal</span>
-              </div>
-              <div class="input-wrapper">
-                <textarea
-                  v-model="formData.simulationRequirement"
-                  class="code-input"
-                  placeholder="// 用自然语言输入模拟或预测需求（例.武大若发布撤销肖某处分的公告，会引发什么舆情走向）"
-                  rows="6"
-                  :disabled="loading"
-                ></textarea>
-                <div class="model-badge">引擎: MiroFish-V1.0</div>
-              </div>
+          <!-- 输入区域 -->
+          <div class="console-section">
+            <div class="console-header">
+              <span class="console-label">02 / Simulation Goal</span>
             </div>
+            <div class="input-wrapper">
+              <textarea
+                v-model="formData.simulationRequirement"
+                class="code-input"
+                placeholder="// Describe the simulation or forecast you want in natural language (e.g. If the company withdraws prior guidance, how would market sentiment evolve?)"
+                rows="6"
+                :disabled="loading"
+              ></textarea>
+              <div class="model-badge">Engine: MiroFish-V1.0</div>
+            </div>
+          </div>
 
-            <!-- 启动按钮 -->
-            <div class="console-section btn-section">
-              <button 
-                class="start-engine-btn"
-                @click="startSimulation"
-                :disabled="!canSubmit || loading"
-              >
-                <span v-if="!loading">启动引擎</span>
-                <span v-else>初始化中...</span>
-                <span class="btn-arrow">→</span>
-              </button>
-            </div>
+          <!-- 启动按钮 -->
+          <div class="console-section btn-section">
+            <button 
+              class="start-engine-btn"
+              @click="startSimulation"
+              :disabled="!canSubmit || loading"
+            >
+              <span v-if="!loading">Start Engine</span>
+              <span v-else>Initializing...</span>
+              <span class="btn-arrow">→</span>
+            </button>
           </div>
         </div>
       </section>
@@ -477,24 +422,22 @@ const startSimulation = () => {
   border-color: var(--orange);
 }
 
-/* Dashboard 双栏布局 */
+/* Dashboard 控制台布局 */
 .dashboard-section {
   display: flex;
-  gap: 60px;
+  flex-direction: column;
+  gap: 28px;
   border-top: 1px solid var(--border);
   padding-top: 60px;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.dashboard-section .left-panel,
-.dashboard-section .right-panel {
+.dashboard-intro {
   display: flex;
   flex-direction: column;
-}
-
-/* 左侧面板 */
-.left-panel {
-  flex: 0.8;
+  width: 100%;
+  max-width: 920px;
+  padding: 0 8px;
 }
 
 .panel-header {
@@ -520,96 +463,23 @@ const startSimulation = () => {
 
 .section-desc {
   color: var(--gray-text);
-  margin-bottom: 25px;
+  margin: 0;
   line-height: 1.6;
+  max-width: 680px;
 }
 
-.metrics-row {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-
-.metric-card {
-  border: 1px solid var(--border);
-  padding: 20px 30px;
-  min-width: 150px;
-}
-
-.metric-value {
+.dashboard-note {
   font-family: var(--font-mono);
-  font-size: 1.8rem;
-  font-weight: 520;
-  margin-bottom: 5px;
-}
-
-.metric-label {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: #999;
-}
-
-/* 项目模拟步骤介绍 */
-.steps-container {
-  border: 1px solid var(--border);
-  padding: 30px;
-  position: relative;
-}
-
-.steps-header {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: #999;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.diamond-icon {
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-.workflow-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.workflow-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.step-num {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--black);
-  opacity: 0.3;
-}
-
-.step-info {
-  flex: 1;
-}
-
-.step-title {
-  font-weight: 520;
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
-
-.step-desc {
-  font-size: 0.85rem;
-  color: var(--gray-text);
-}
-
-/* 右侧交互控制台 */
-.right-panel {
-  flex: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 16px 0 0 0;
 }
 
 .console-box {
+  width: 100%;
+  max-width: 920px;
   border: 1px solid #CCC; /* 外部实线 */
   padding: 8px; /* 内边距形成双重边框感 */
 }
@@ -813,10 +683,6 @@ const startSimulation = () => {
 
 /* 响应式适配 */
 @media (max-width: 1024px) {
-  .dashboard-section {
-    flex-direction: column;
-  }
-  
   .hero-section {
     flex-direction: column;
   }
@@ -829,6 +695,15 @@ const startSimulation = () => {
   .hero-logo {
     max-width: 200px;
     margin-bottom: 20px;
+  }
+
+  .dashboard-section {
+    padding-top: 40px;
+  }
+
+  .dashboard-intro,
+  .console-box {
+    max-width: 100%;
   }
 }
 
@@ -846,61 +721,31 @@ const startSimulation = () => {
 }
 
 .input-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #e5e7eb;
-  letter-spacing: 0.01em;
-}
-
-.announcement-textarea {
-  width: 100%;
-  min-height: 260px;
-  padding: 18px 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  font-family: inherit;
-  resize: vertical;
-  outline: none;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  box-sizing: border-box;
-}
-
-.announcement-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.announcement-textarea:focus {
-  border-color: #f97316;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #666;
+  letter-spacing: 0.02em;
 }
 
 .context-input {
   width: 100%;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-family: inherit;
+  border: none;
+  background: transparent;
+  padding: 20px;
+  color: var(--black);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-family: var(--font-mono);
   outline: none;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
 .context-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: #999;
 }
 
-.context-input:focus {
-  border-color: #f97316;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+.announcement-input {
+  min-height: 260px;
 }
 
 </style>
